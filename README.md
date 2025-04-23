@@ -1,38 +1,81 @@
 # Weather Advisory Expert System
 
-## Objective
-Generate weather-based advice using rules
+This project implements a weather advisory expert system that provides context-aware recommendations based on weather conditions and user activities. The system uses decision tables and conditional logic to generate appropriate advisories for various weather scenarios.
 
-## Possible Computational Techniques
-1. Decision tables
-2. Conditional statements
+## Group 5
+## Team Members
 
-## Flask UI Component
-1. Weather parameters input
-2. text advisory output
+- Uyi Osazee Irvin (VUG/SEN/22/8386) - Data Modeling & Testing
+- Aneke Olivia.C. (VUG/SEN/22/8304) - User Interface Design (HTML/CSS)
+- Babatunde Philip Olutayo (VUG/SEN/22/8575) - Flask Application Development
 
-## Types of Dataset
-1. Weather patterns
-2. historical weather data
+## Features
 
-## Possible Sources for Dataset
-1. NOAA
-2. Weather APIs
-3. meteorological departments
+- Weather condition assessment based on temperature, humidity, and wind speed
+- Activity-specific risk evaluation (daily commute, outdoor sports, travel)
+- Seasonal and time-of-day context awareness
+- Precipitation and wind advisory generation
+- Severity classification of weather conditions
+- Web interface for easy interaction
 
-## Dataset URLs
-1. https://www.ncdc.noaa.gov/cdo-web/datasets
-2. https://openweathermap.org/api
-3. https://www.metoffice.gov.uk/research/climate/maps-and-data
+## Project Structure
 
-## Setup Instructions
-5. Weather Advisory System
-1. Flask input for temperature, humidity, wind.
-2. Build decision tables.
-3. Use condition chains for advice.
-4. Connect to weather API.
-5. Create database of advisories.
-6. Add severity indicators.
-7. Give contextual tips (travel, outdoor).
-8. Use visuals for conditions.
-9. Validate against historical data.
+- `weather_advisory_model.py`: Core expert system model with decision tables
+- `app.py`: Flask web application 
+- `templates/index.html`: User interface template
+- `requirements.txt`: Project dependencies
+
+## Installation
+
+1. Clone this repository
+2. Create a virtual environment:
+   ```
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
+3. Install dependencies:
+   ```
+   pip install -r requirements.txt
+   ```
+4. Run the application:
+   ```
+   python app.py
+   ```
+5. Open your browser and navigate to `http://127.0.0.1:5000/`
+
+## How It Works
+
+The system uses decision tables to classify weather conditions based on temperature, humidity, and wind speed. It then determines the risk level for specific activities under those conditions. Additional factors like precipitation, time of day, and seasonal context are incorporated to provide comprehensive advisories.
+
+### Decision Tables
+
+- General condition table: Maps temperature, humidity, and wind ranges to weather conditions
+- Risk level table: Maps weather conditions and activities to risk levels
+- Advisory database: Maps conditions and risk levels to specific advice
+
+### Weather Parameters
+
+- Temperature (°C)
+- Humidity (%)
+- Wind Speed (km/h)
+- Precipitation (mm)
+- Activity type (daily commute, outdoor sports, travel)
+- Month (for seasonal context)
+
+## Data Sources
+
+This system can be connected to weather APIs like:
+- NOAA Climate Data
+- OpenWeatherMap
+- Met Office data
+
+## Future Enhancements
+
+- Integration with live weather APIs
+- Historical data analysis for trend-based recommendations
+- Location-specific advisories
+- Mobile-responsive design improvements
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
